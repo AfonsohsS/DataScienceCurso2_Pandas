@@ -9,6 +9,8 @@ dados['Tipo']
 
 tipoImovel = dados.Tipo
 
+type(tipoImovel)
+
 tipoImovel.drop_duplicates()
 
 ## (inplace = True) modifica a variável a partir da execução
@@ -16,4 +18,19 @@ tipoImovel.drop_duplicates()
 ## a execução à ela
 tipoImovel.drop_duplicates(inplace = True)
 
-tipoImovel
+## Oraganizando a visualização
+
+tipo_de_imovel = pd.DataFrame(tipoImovel)
+tipo_de_imovel
+
+tipo_de_imovel.shape[0]
+
+## Reorganizando o index do DataFrame
+
+tipo_de_imovel.index = range(tipo_de_imovel.shape[0])
+
+tipo_de_imovel.index
+
+tipo_de_imovel.columns.name = "id"
+
+tipo_de_imovel
