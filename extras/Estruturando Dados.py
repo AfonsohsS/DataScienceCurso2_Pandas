@@ -104,3 +104,11 @@ df4
 
 df5 = pd.concat([new_df, new_df2, new_df3], axis = 1)
 df5
+
+# Exemplo do teste
+
+novos_dados = [[1, 2, 3], [4, 5, 6]]
+index = 'X,Y'.split(',')
+columns = list('CBA')[::-1] # ???
+df6 = pd.DataFrame(novos_dados, index, columns)
+df6
