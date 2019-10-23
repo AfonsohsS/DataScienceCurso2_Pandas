@@ -9,3 +9,15 @@ alunos = pd.DataFrame({'Nome': ['Ary', 'Cátia', 'Denis', 'Beto', 'Bruna', 'Dara
                         columns = ['Nome', 'Idade', 'Sexo', 'Notas', 'Aprovado'])
 
 alunos
+
+selecao = alunos.Aprovado == False
+
+selecao
+
+alunosReprovados = alunos[selecao][['Nome', 'Sexo', 'Idade']]
+
+alunosReprovados
+
+young = alunos.sort_values(by = ['Idade'])[:3]
+
+young
