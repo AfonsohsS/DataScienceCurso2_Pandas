@@ -55,3 +55,16 @@ dados.info() # Conferindo se todos os valores nulos foram removidos
 # Exportando o novo BD com a correção dos valores nulos
 dados.to_csv('aluguel_residencial.csv', sep = ';', index = False)
 
+# Revisando a aula com exercício
+imoveis = pd.DataFrame([['Apartamento', None, 970, 68], 
+                        ['Apartamento', 2000, 878, 112], 
+                        ['Casa', 5000, None, 500], 
+                        ['Apartamento', None, 1010, 170], 
+                        ['Apartamento', 1500, 850, None], 
+                        ['Casa', None, None, None], 
+                        ['Apartamento', 2000, 878, None], 
+                        ['Apartamento', 1550, None, 228], 
+                        ['Apartamento', 2500, 880, 195]], 
+                        columns = ['Tipo', 'Valor', 'Condominio', 'IPTU'])
+
+imoveis
