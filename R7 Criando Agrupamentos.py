@@ -37,8 +37,8 @@ grupo_bairro.groups
 
 # Avaliando os valores agrupados
 # Com o agrupamento cada bairro é guardado em um DataFrame
-for bairro, dados in grupo_bairro:
-    print('{} -> {}'.format(bairro, dados.Valor.mean()))
+for bairro, data in grupo_bairro:
+    print('{} -> {}'.format(bairro, data.Valor.mean()))
 
 # Uma forma mais simples de receber a média
 grupo_bairro.Valor.mean().round(2)
@@ -66,3 +66,30 @@ sexo.columns = ['Notas Médias']
 sexo
 
 # =============================================================
+
+# Estatística Descritiva
+grupo_bairro.Valor.describe().round(2)
+
+# Selecionando valores estatísticos específicos
+grupo_bairro.Valor.aggregate(['min', 'max', 'sum', 'mean'])
+
+# Organizando o DataFrame
+grupo_bairro.Valor.aggregate(['min', 
+                                'max', 
+                                'sum', 
+                                'mean']).rename(columns = {'min': 'Minimo', 
+                                                            'max': 'Maximo', 
+                                                            'sum': 'Soma', 
+                                                            'mean': 'Média'})
+
+# Visualizando os dados graficamente
+
+import matplotlib.pyplot as plt
+plt.rc('figure', figsize = (20,10))
+
+grupo_bairro['Valor'].std().plot.bar(color = 'green')
+
+# Configurando um gráfico de barras 
+fig = grupo_bairro['Valor'].mean().plot.bar(color = 'cyan')
+fig.set_ylabel('Valor Aluguel', {'fontsize' : 12})
+fig.set_title('Valor Médio do Aluguel', {'fontsize' : 22})
